@@ -2,6 +2,39 @@ body{
   padding-top:80px;
   word-wrap:break-word;
 }
+.introPage{
+  width: 80%;
+}
+.logInImage{
+  margin-left: 250px;
+}
 img{
   height: 200px;
+}
+.container{
+  width: 100%;
+  display: flex;
+  padding: 0;
+  margin: 0;
+}
+.listOfPatients,
+.scheduleForm {
+  height: 300px;
+  width: 50%;
+  flex: 1; /* Ensures both divs take up equal space */
+  padding: 10px;
+  border: 1px solid #ccc; /* Optional: Adds a border for clarity */
+  box-sizing: border-box; /* Ensures padding doesn't affect width */
+}
+h4{
+  text-align: center;
+}
+#patient{
+  margin-left: 100px;
+}
+#floor{
+  margin-left: 200px;
+}
+p{
+  text-align: center;
 }
