@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+
+<head>
+    <title>Dragon Tech</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+
+        <div class="jumbotron text-center">
+
+            <img src="/img/Dragon tech.png" alt="dragon tech logo">
+
+            <h3>Patient Name</h3>
+
+            <div class="container">
+                <div class="jumbotron text-center">
+                    <img src="/img/Dragon tech.png" alt="dragon tech logo">
+                    <h3>
+                        <%= patient.name %>
+                    </h3>
+                    <p>Room: <%= patient.roomNumber %>
+                    </p>
+                </div>
+                <div class="container">
+                    <h1 class="text-center">Patient Care Questionnaire</h1>
+                    <form action="/submitQuestionnaire" method="POST" class="form-horizontal">
+                        <!-- Bathing Question -->
+                        <div class="form-group">
+                            <label for="bathing" class="col-sm-4 control-label">Did you bathe the patient?</label>
+                            <div class="col-sm-8">
+                                <select id="bathing" name="bathing" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Shower">Shower</option>
+                                    <option value="Bed bath">Bed bath</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Breakfast Question -->
+                        <div class="form-group">
+                            <label for="breakfast" class="col-sm-4 control-label">Did the patient eat breakfast?</label>
+                            <div class="col-sm-8">
+                                <select id="breakfast" name="breakfast" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Lunch Question -->
+                        <div class="form-group">
+                            <label for="lunch" class="col-sm-4 control-label">Did the patient eat lunch?</label>
+                            <div class="col-sm-8">
+                                <select id="lunch" name="lunch" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Dinner Question -->
+                        <div class="form-group">
+                            <label for="dinner" class="col-sm-4 control-label">Did the patient eat dinner?</label>
+                            <div class="col-sm-8">
+                                <select id="dinner" name="dinner" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Changing Question -->
+                        <div class="form-group">
+                            <label for="changed" class="col-sm-4 control-label">Did you change the patient?</label>
+                            <div class="col-sm-8">
+                                <select id="changed" name="changed" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Abrasions Question -->
+                        <div class="form-group">
+                            <label for="abrasions" class="col-sm-4 control-label">Did you find any new abrasions on the
+                                skin?</label>
+                            <div class="col-sm-8">
+                                <select id="abrasions" name="abrasions" class="form-control" required>
+                                    <option value="" disabled selected>Select an option</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <div class="col-sm-offset-4 col-sm-8">
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
+                        </div>
+
+                </div>
+</body>
+
+</html>
