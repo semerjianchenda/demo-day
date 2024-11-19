@@ -13,7 +13,7 @@ module.exports = function(app, passport, db) {
           if (err) return console.error(err);
           res.render('profile.ejs', {
             user: req.user,
-            movies: result, // Correctly pass `movies` here
+            // movies: result, // Correctly pass `movies` here
           });
         });
       });
@@ -126,6 +126,27 @@ app.post('/submitQuestionnaire', (req, res) => {
 
   // Redirect to the profile page after submission
   res.redirect('/profile');
+});
+
+app.delete('/patients/:id', async (req, res) => {
+  const { id } = req.params;
+
+  if (!ObjectId.isValid(id)) {
+    return res.status(400).json({ error: 'Invalid patient ID' });
+  }
+
+  try {
+    const result = await req.db.collection('patients').deleteOne({ _id: new ObjectId(id) });
+
+    if (result.deletedCount === 0) {
+      return res.status(404).json({ error: 'Patient not found' });
+    }
+
+    res.json({ message: 'Patient deleted successfully' });
+  } catch (err) {
+    console.error('Error deleting patient:', err);
+    res.status(500).json({ error: 'Failed to delete patient' });
+  }
 });
 
   // =============================================================================
